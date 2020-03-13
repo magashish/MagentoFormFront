@@ -1,0 +1,98 @@
+<style type="text/css">
+.blog-index-index #maincontent {
+    margin: 0 auto;
+    border: 2px solid #000;
+    padding: 20px;
+    border-radius: 15px;
+}
+.blog-index-index .page-title-wrapper {
+    text-align: center;
+}
+.blogheading {
+    padding-bottom: 35px;
+    font-style: italic;
+    font-size: 20px;
+    text-align: center;
+}
+.blogbody {
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 15px;
+    width: 98%;
+    display: inline-block;
+}
+.blogbodyleft {
+    width: 80%;
+    float: left;
+}
+.blogbodyright {
+    width: 20%;
+    float: left;
+}
+textarea#postcontent,input[type="text"] {
+    border: 2px solid #000;
+}
+input#email {
+    width: 50%;
+}
+.fieldset>.field:not(.choice)>.control {
+    width: 100%;
+}
+input#fileToUpload {
+    float: right;
+    border: 2px solid #000;
+    padding: 10px;
+}
+</style>
+<div class="blogparent">
+	<div class="blogheading">
+		<span>A totally false statement</span>
+    </div>
+    <div class="blogbody">
+
+ <span style="text-align: left;font-size: 20px;font-weight: bold;margin-bottom: 20px;display: block;">New blog post</span>
+<form class="form contact-inchoo" action="<?php /* @escapeNotVerified */ echo $block->getFormAction(); ?>" enctype="multipart/form-data" id="blog-form" method="post" data-hasrequired="* Required Fields">
+	<div class="blogbodyleft">
+	<fieldset class="fieldset">
+		<div class="field posttitle required">
+			<div class="control">
+                <input name="posttitle" id="posttitle" title="Post Title" value="" class="input-text" type="text" placeholder="My post title" data-validate="{required:true}"/>
+			</div>
+		</div>
+    	<div class="field postcontent required">            		
+    		<div class="control">
+        		<textarea name="postcontent" id="postcontent" title="Post Content" class="input-text" rows="5" data-validate="{required:true}"></textarea>
+    		</div>
+    	</div>
+    	<div class="field email required">
+        		<div class="control">
+            		<input name="email" id="email" title="Email" value="" class="input-text" type="text" placeholder="Email Address" data-validate="{required:true, 'validate-email':true}"/>
+        		</div>
+    	</div>
+        <div class="field fileToUpload required">
+        		<div class="control">
+            		<input type="file" name="fileToUpload" id="fileToUpload" data-validate="{required:true}">
+        		</div>
+    	</div>
+	</fieldset>
+    </div>
+    <div class="blogbodyright">
+	<div class="actions-toolbar">
+	        <div class="primary">
+            		<button type="submit" title="Save Post" class="action submit primary">
+                		<span>Save Post</span>
+            		</button>
+        	</div>
+    	</div>
+    </div>
+</form>
+</div>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "#blog-form": {
+            "validation": {}
+        }
+    }
+</script>
